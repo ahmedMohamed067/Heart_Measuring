@@ -37,6 +37,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
 
     await Future.delayed(Duration(seconds: 10));
     await subscription.cancel();
+    await connection.close();
     setState(() {
       condition = "See a doctor";
     });

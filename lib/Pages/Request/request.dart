@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:date_format/date_format.dart';
 import 'package:http/http.dart';
 
 import '../pages.dart';
@@ -133,7 +134,9 @@ class _RequestDialogState extends State<RequestDialog> {
         setState(() {});
       },
       child: Text(
-        (request["time"] != null) ? "${request["time"].hour} " : "Time",
+        (request["time"] != null)
+            ? "${request["time"].hour}:${request["time"].minute}"
+            : "Time",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.black54,
